@@ -15,18 +15,18 @@
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
-const GraphqlAdonis = use('ApolloServer')
+const ApolloServer = use('ApolloServer')
 const schema = require('../app/data/schema')
 
-Route.get('/', () => 'cabaço')
+Route.get('/', ({ request }) => { greeting: 'Hello world in JSON'} )
 
 Route.route('/graphql', ({ request, auth, response }) => {
-  return GraphqlAdonis.graphql({
+  return ApolloServer.graphql({
     schema,
     context: { auth }
   }, request, response)
 }, ['GET', 'POST'])
 
 Route.get('/graphiql', ({ request, response }) => {
-  return GraphqlAdonis.graphiql({ endpointURL: '/graphql' }, request, response)
+  return ApolloServer.graphiql({ endpointURL: '/graphql' }, request, response)
 })
