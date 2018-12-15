@@ -1,8 +1,8 @@
 {
   "name": "adonis-api-app",
-  "version": "4.1.0",
+  "version": "1.0.0",
   "adonis-version": "4.1.0",
-  "description": "Adonisjs boilerplate for API server with pre-configured JWT",
+  "description": "This project is a GraphQL server with the concept of a basic blog. The blog will have User and Post entities. We’ll be able to create users and authenticate them using JSON Web Tokens (JWT). Authenticated users will be able to create posts.",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
